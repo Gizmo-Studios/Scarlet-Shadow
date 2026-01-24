@@ -17,9 +17,9 @@ https://s4g.itch.io/scarlet-shadow
 - `VFX`
 
 ## 🗝️ Key Aspects
-- **Modular Combat System** with **Perks** that add new abilities to the player
-- Split between **Visuals** and **Logic**
-- **Asset Database** for handling the visuals for different players
+- **Combat** and **Movement** for 2D Platformer
+- **Dynamic Camera System** for controlling the player view
+- **Level Transitions** to always l
 - **VFX/Object Pooling** for performance
 
 
