@@ -35,7 +35,7 @@ The character took a lot of work and was the main focus for me. The image shows 
 ### 🎥 Camera:
 <img align="right" height="300" src="https://github.com/user-attachments/assets/ee5563b6-b4ae-4508-8fbf-ad16ee55efae" />
 <img align="right" height="300" src="https://github.com/user-attachments/assets/f3a0ad70-8fe5-4e78-b70a-e59fccae0df2" />
-The perks are the main feature of the game. They are modular, so our designers can combine them and tweak values on the fly. Furthermore new perks are created with a perk base which gives a solid foundation and ensures that they work directly with the rest.
+The camera was another big part for the game. A normal camera that just smoothly follows the player was not enough so I added a few interesting features to it. First of all the camera should always have the character a bit off-center to show what is going on ahead of the player, this helps with navigating the level and not getting surprised by obstacles suddenly showing up. Another important part was to have the option to limit the camera movement in certain parts. An example would be the end of a Level, I wanted the camera to stop and not blocking half the screen with just walls. This also helped the level designers with the workload. The last part was a set camera. In certain spots the camera locks into a position, like in the gif on the right. This helps with guiding the player and gives a certain type of dynamic to the game.
 </br></br>
 </br></br>
 
@@ -44,10 +44,8 @@ The perks are the main feature of the game. They are modular, so our designers c
 
 ### 🚪 Scene Changer:
 <img align="right" src="https://github.com/user-attachments/assets/86053b6d-d570-493b-bf38-af0ca45fb817" width="450"/>
-When not working on combat I was prototyping some Houdini assets to help with the level pipeline, but in the end it didn't make it in the final game.
+As Hollow Knight was a big inspiration I also wanted to have the ability to leave and re-enter a level / scene. I wrote the script and included easy to use presets so our designer can implement the "portals" and see the connections by color instead of looking everything up again.
 
 </br></br></br></br></br></br></br></br></br>
-***
-## Trailer
-https://github.com/user-attachments/assets/d373cbcb-f552-475d-91f6-b12277eac08a
+
 
