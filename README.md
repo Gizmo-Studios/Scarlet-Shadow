@@ -9,8 +9,6 @@
 https://s4g.itch.io/scarlet-shadow
 
 
-
-
 ## 🎯 Skills & Software
 - `Godot`
 - `GDScript`
@@ -19,30 +17,33 @@ https://s4g.itch.io/scarlet-shadow
 ## 🗝️ Key Aspects
 - **Combat** and **Movement** for 2D Platformer
 - **Dynamic Camera System** for controlling the player view
-- **Level Transitions** to always l
-- **VFX/Object Pooling** for performance
-
+- **Level Transitions** to always land in the right spot
 
 ## 🚩 Personal & Design Goals
 
-I am a big fan of multiplayer games and interested in the inner workings, so together with my group we designed a fun **party game** with a big focus on playing against each other. I worked mainly on the **combat system** and **"feel"**. The player character is a little ghost that can choose between one of three weapons with different playstyle and acquires **perks** throughout the game.
-<p align="center"> <img  width="300" 
-src="https://github.com/user-attachments/assets/b032e3d3-5e8e-4061-9e99-a73ba560d32c"/>
-</p>
+In this Project I worked on a 2D Platformer in the style of Hollow Knight. The player character was the main focus and everything he does and around him had to feel really good. Futhermore the player movement had to be tight, so the platforming parts don't feel unfair to the player. I spend a great amount of time on refining the movement and implementing all sorts of tricks like ledge grabs, coyote time and support for easier walljumps. The movement is inspired by games like Hollow Knight, Celest or Super Meatboy but with its own style.
+</br></br>
 
-### Weapons:
-<img align="right" width="150" 
-src="https://github.com/user-attachments/assets/94435c16-9ebd-43ff-b658-1b6c20964921"/>
-The weapons vary in their **"projectile behavior"**. The revolver is a a classic hitscan weapon. The rune shotgun has **slow flying projectiles** and the tommy gun has **fast projectiles**. Each gun added new challenges, especially because of the networking aspects of the game.
 
-### Perks:
+### 🦊 Character:
+<img align="right" width="350" 
+src="https://github.com/user-attachments/assets/68bf552b-17f9-4674-9a56-dfbcca7d851a"/>
+The character took a lot of work and was the main focus for me. The image shows all the little checks the character does to give the optimal feel. There are checks for walls infront and behind him, to make wall jumps work as intended and help him stick to walls. Above his head are checks so the character slides around the corners of our tileset so he doesn't get stuck with only a few pixel of his head. Additionaly the character has the ability to do a ledge grab, which helps with tight jumps or when missing a platform.
+</br></br>
+</br></br>
 
+### 🎥 Camera:
+<img align="right" height="300" src="https://github.com/user-attachments/assets/ee5563b6-b4ae-4508-8fbf-ad16ee55efae" />
+<img align="right" height="300" src="https://github.com/user-attachments/assets/f3a0ad70-8fe5-4e78-b70a-e59fccae0df2" />
 The perks are the main feature of the game. They are modular, so our designers can combine them and tweak values on the fly. Furthermore new perks are created with a perk base which gives a solid foundation and ensures that they work directly with the rest.
+</br></br>
+</br></br>
 
 
 
-### Procedural Terrain:
-<img align="right" src="https://github.com/user-attachments/assets/444a98f9-fd5f-4e59-8c52-8e6359682322" width="450" height="250"/>
+
+### 🚪 Scene Changer:
+<img align="right" src="https://github.com/user-attachments/assets/86053b6d-d570-493b-bf38-af0ca45fb817" width="450"/>
 When not working on combat I was prototyping some Houdini assets to help with the level pipeline, but in the end it didn't make it in the final game.
 
 </br></br></br></br></br></br></br></br></br>
