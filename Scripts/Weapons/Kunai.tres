@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bvli72unhtfkd"]
+
+[ext_resource type="PackedScene" uid="uid://d5mousvcc7jx" path="res://Scenes/Level/Kunai_Proj.tscn" id="1_fk4ku"]
+[ext_resource type="PackedScene" uid="uid://eo5ng8rc0ylt" path="res://Scenes/Level/Kunai_abi_Proj.tscn" id="1_jgjst"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Kunai.gd" id="1_vr1r1"]
+[ext_resource type="Texture2D" uid="uid://bb3v082671u8m" path="res://Assets/Abilities/T_CAnchor_Kunai_Test.png" id="2_bdy13"]
+
+[resource]
+script = ExtResource("1_vr1r1")
+kunai_proj = ExtResource("1_fk4ku")
+kunai_abi_proj = ExtResource("1_jgjst")
+kunai_max_distance = 0.0
+w_name = "Kunai"
+w_icon = ExtResource("2_bdy13")
+w_max_uses = 10
+w_uses_left = 0
+ink_cost = 0.0

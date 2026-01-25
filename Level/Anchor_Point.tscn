@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://blfiymxxmmrvn"]
+
+[ext_resource type="Texture2D" uid="uid://bax5yibsr5gy0" path="res://Assets/Props/hookpointring.png" id="1_7fimq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi88y"]
+radius = 99.1816
+
+[node name="AnchorPoint" type="StaticBody2D" groups=["Anchor"]]
+position = Vector2(0, 130)
+collision_layer = 64
+collision_mask = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(10, -13)
+scale = Vector2(0.732031, 0.612891)
+texture = ExtResource("1_7fimq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -47)
+shape = SubResource("CircleShape2D_yi88y")
+
+[node name="Node" type="Node" parent="."]

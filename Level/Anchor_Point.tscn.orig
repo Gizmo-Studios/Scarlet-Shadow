@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://blfiymxxmmrvn"]
+
+[ext_resource type="Texture2D" uid="uid://dcyn6xsfm24l1" path="res://Assets/Level/lampe_fertig.png" id="1_1qkwd"]
+
+<<<<<<< working copy
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggycu"]
+size = Vector2(2.05385, 40.7178)
+
+[node name="AnchorPoint" type="Area2D" groups=["Anchor"]]
+=======
+[node name="AnchorPoint" type="Node2D" groups=["Anchor"]]
+>>>>>>> destination
+position = Vector2(0, 130)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< working copy
+position = Vector2(9, -132.063)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_1qkwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.50001, -130)
+rotation = -3.14159
+scale = Vector2(55.0185, -3.08757)
+shape = SubResource("RectangleShape2D_ggycu")
+=======
+position = Vector2(0, -20)
+texture = ExtResource("1_gi10j")
+>>>>>>> destination

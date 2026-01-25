@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwaerdaa5t038"]
+
+[ext_resource type="Texture2D" uid="uid://c3s0vf14obpif" path="res://Assets/Abilities/T_WallJump_Test.png" id="1_u3qsa"]
+[ext_resource type="Script" path="res://Scenes/VFX/fx_wj_test.gd" id="2_bxikv"]
+
+[node name="Node2D" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u3qsa")
+offset = Vector2(101.21, 136.195)
+script = ExtResource("2_bxikv")

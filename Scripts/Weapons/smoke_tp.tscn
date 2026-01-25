@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2upuxn3ioj6a"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/smoke_tp.gd" id="1_t5kyb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ibndo"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvco8"]
+radius = 15.0
+
+[sub_resource type="Gradient" id="Gradient_tr4wl"]
+offsets = PackedFloat32Array(0.519101, 0.577528, 0.613483)
+colors = PackedColorArray(0.405756, 0.358763, 0.489147, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_efgct"]
+gradient = SubResource("Gradient_tr4wl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.820513, 0.226496)
+
+[node name="Smoke_TP" type="RigidBody2D"]
+collision_layer = 8
+physics_material_override = SubResource("PhysicsMaterial_ibndo")
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_t5kyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wvco8")
+
+[node name="S" type="RayCast2D" parent="."]
+
+[node name="N" type="RayCast2D" parent="."]
+rotation = -3.14159
+
+[node name="O" type="RayCast2D" parent="."]
+rotation = -1.5708
+
+[node name="W" type="RayCast2D" parent="."]
+rotation = 1.5708
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 38.0
+offset_bottom = 38.0
+scale = Vector2(0.824373, 0.824373)
+texture = SubResource("GradientTexture2D_efgct")
+
+[node name="Fly_Duration" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="Fly_Duration" to="." method="_on_fly_duration_timeout"]

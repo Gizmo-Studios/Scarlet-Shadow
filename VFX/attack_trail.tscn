@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://drapnuju88jyk"]
+
+[ext_resource type="Script" path="res://projectile_trail.gd" id="1_rpt70"]
+
+[sub_resource type="Curve" id="Curve_btr38"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Trail" type="Line2D"]
+width = 40.0
+width_curve = SubResource("Curve_btr38")
+script = ExtResource("1_rpt70")

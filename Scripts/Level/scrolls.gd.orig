@@ -1,0 +1,26 @@
+extends Area2D
+
+
+<<<<<<< working copy
+func _process(delta: float) -> void:
+	pass
+=======
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$ScrollIcon/InteractionArea.interact = Callable(self,"on_interact")
+	pass # Replace with function body.
+
+
+func _on_body_exited(body: Node2D) -> void:
+	$CanvasLayer.hide()
+>>>>>>> merge rev
+
+
+func _on_body_entered(body: Node2D) -> void:
+	$CanvasLayer.show()
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	$CanvasLayer.show()
+	pass # Replace with function body.

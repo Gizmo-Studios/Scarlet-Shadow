@@ -1,0 +1,18 @@
+extends CharacterBody2D
+
+#Player Stats for Movement
+var SPEED = 300.0
+var JUMP_VELOCITY = -400.0
+var JUMP_CUT_VELOCITY = -400
+var FAST_FALL_MULTIPLIER = 2
+var WALL_SLIDE = 10
+var WALL_PUSH_OFF = 400.0
+var WALL_JUMP_HEIGHT = -400
+var WALL_JUMP_MOVEMENT_LOCK_DURATION = 10
+var COYOTE_FLOOR = 0.1
+var COYOTE_WALL = 0.1
+var JUMP_BUFFER = 0.1
+var NUMBER_OF_JUMPS = 1
+var NUMBER_OF_WJUMPS = -1
+
+#Player States

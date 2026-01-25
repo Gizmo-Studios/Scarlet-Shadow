@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://caypolf4drtji"]
+
+[ext_resource type="Script" path="res://Respawn/camera_room.gd" id="1_3tjhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnnsb"]
+resource_local_to_scene = true
+size = Vector2(200, 200)
+
+[node name="Lock_Camera_Position" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3tjhm")
+only_lock_vertical = true
+
+[node name="Lock_Camera_Area" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nnnsb")
+debug_color = Color(0, 0.417123, 0.780166, 0.751)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

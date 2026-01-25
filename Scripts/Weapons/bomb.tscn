@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmamn6k7wodr6"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_x1ae5"]
+[ext_resource type="Texture2D" uid="uid://buhw71e3ud5ym" path="res://Assets/Abilities/S_Bombs_Proj_Test.png" id="2_2tcuk"]
+[ext_resource type="Texture2D" uid="uid://c6ukid7hh002b" path="res://Assets/VFX/AS_Explosion.png" id="3_wv30a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ej3mr"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xigyn"]
+radius = 130.015
+
+[sub_resource type="Animation" id="Animation_8a66f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_i6yng"]
+resource_name = "explosion"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6hdk"]
+_data = {
+"RESET": SubResource("Animation_8a66f"),
+"explosion": SubResource("Animation_i6yng")
+}
+
+[node name="Bomb" type="RigidBody2D"]
+collision_layer = 8
+lock_rotation = true
+script = ExtResource("1_x1ae5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ej3mr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(0.184072, 0.184072)
+texture = ExtResource("2_2tcuk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xigyn")
+
+[node name="Explosion" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.73357, 1.73357)
+texture = ExtResource("3_wv30a")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion"]
+libraries = {
+"": SubResource("AnimationLibrary_a6hdk")
+}

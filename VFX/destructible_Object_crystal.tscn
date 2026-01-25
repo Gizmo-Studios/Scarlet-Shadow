@@ -1,0 +1,107 @@
+[gd_scene load_steps=18 format=3 uid="uid://ha1w4qudg3c3"]
+
+[ext_resource type="Script" path="res://destructible.gd" id="1_to8qa"]
+[ext_resource type="Texture2D" uid="uid://bs8uupunjiisl" path="res://Assets/VFX/SA_Crystal_Pieces.png" id="2_fhid7"]
+[ext_resource type="PackedScene" uid="uid://d2754mjoet6tp" path="res://Scenes/VFX/destructible_piece.tscn" id="3_f5wx8"]
+[ext_resource type="PackedScene" uid="uid://btdgv4vrm3sb4" path="res://coins.tscn" id="4_1yie8"]
+[ext_resource type="PackedScene" uid="uid://dat21rcj4yyl0" path="res://dust_impact.tscn" id="5_7q4du"]
+[ext_resource type="Texture2D" uid="uid://lee1farowmyq" path="res://Assets/Props/kristall_1.png" id="6_a2cqw"]
+[ext_resource type="Texture2D" uid="uid://c3pjspk2qpvq2" path="res://Assets/VFX/T_Hit_Flare.png" id="7_6ggbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oqal"]
+size = Vector2(172, 216)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1w4cr"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_23rhp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.274775, 1), 0.0, 0.0, 0, 0, Vector2(0.846847, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_v8eqp"]
+curve = SubResource("Curve_23rhp")
+
+[sub_resource type="Curve" id="Curve_lehmm"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 35.6044), 0.0, -47.4725, 0, 1, Vector2(1, -11.8682), -47.4725, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y3e0m"]
+curve = SubResource("Curve_lehmm")
+
+[sub_resource type="Curve" id="Curve_gv2dh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0945946, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2hlus"]
+curve = SubResource("Curve_gv2dh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lredj"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 150.0
+angle_min = 1.00001
+angle_max = 2.00001
+angle_curve = SubResource("CurveTexture_y3e0m")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_2hlus")
+color = Color(0.690208, 0.55017, 0.8033, 1)
+alpha_curve = SubResource("CurveTexture_v8eqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xy1fn"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+angle_min = 1.00001
+angle_max = 2.00001
+angle_curve = SubResource("CurveTexture_y3e0m")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_2hlus")
+color = Color(0.690208, 0.55017, 0.8033, 1)
+alpha_curve = SubResource("CurveTexture_v8eqp")
+
+[node name="Destructible" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_to8qa")
+destroyed_texture = ExtResource("2_fhid7")
+h_frames = 3
+v_frames = 2
+des_object = ExtResource("3_f5wx8")
+coins = ExtResource("4_1yie8")
+dust_clouds = ExtResource("5_7q4du")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, -58)
+scale = Vector2(0.279597, 0.279597)
+texture = ExtResource("6_a2cqw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0oqal")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_1w4cr")
+position = Vector2(8, -27)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_lredj")
+texture = ExtResource("7_6ggbm")
+lifetime = 6.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_1w4cr")
+position = Vector2(-14, -158)
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_xy1fn")
+texture = ExtResource("7_6ggbm")
+lifetime = 6.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

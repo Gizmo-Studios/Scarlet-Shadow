@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://fbqqyi5hyodi"]
+
+[ext_resource type="Script" path="res://destructible.gd" id="1_ll4s6"]
+[ext_resource type="Texture2D" uid="uid://mjervlnvl52y" path="res://Assets/Props/S_Pot_01_Des.png" id="2_ui0fr"]
+[ext_resource type="PackedScene" uid="uid://d2754mjoet6tp" path="res://Scenes/VFX/destructible_piece.tscn" id="3_f74r0"]
+[ext_resource type="PackedScene" uid="uid://btdgv4vrm3sb4" path="res://coins.tscn" id="4_bgu3l"]
+[ext_resource type="Texture2D" uid="uid://cc51hs2sysouq" path="res://Assets/Props/S_Pot_01.png" id="4_n2qfi"]
+[ext_resource type="PackedScene" uid="uid://dat21rcj4yyl0" path="res://dust_impact.tscn" id="6_pe346"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bagfa"]
+size = Vector2(172, 152)
+
+[node name="Destructible" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ll4s6")
+destroyed_texture = ExtResource("2_ui0fr")
+h_frames = 3
+v_frames = 2
+des_object = ExtResource("3_f74r0")
+coins = ExtResource("4_bgu3l")
+dust_clouds = ExtResource("6_pe346")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_n2qfi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bagfa")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

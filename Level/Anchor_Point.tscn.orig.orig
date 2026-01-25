@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://blfiymxxmmrvn"]
+
+[ext_resource type="Texture2D" uid="uid://dcyn6xsfm24l1" path="res://Assets/Level/lampe_fertig.png" id="1_1n2bi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rki8y"]
+radius = 68.0
+height = 216.0
+
+[node name="AnchorPoint" type="StaticBody2D" groups=["Anchor"]]
+position = Vector2(0, 130)
+collision_layer = 64
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21, -44)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_1n2bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, -47)
+shape = SubResource("CapsuleShape2D_rki8y")
+
+[node name="Node" type="Node" parent="."]

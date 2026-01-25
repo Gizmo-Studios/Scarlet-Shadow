@@ -1,0 +1,35 @@
+extends Weapon
+
+@export var kunai_proj : PackedScene
+@export var kunai_abi_proj : PackedScene
+<<<<<<< working copy
+
+
+func attack(parent_node: Node,dir:Vector2):
+	var kunai = kunai_proj.instantiate()
+	parent_node.get_tree().get_root().add_child(kunai)
+	kunai.linear_velocity = kunai.linear_velocity * dir.normalized()
+	kunai.rotation = dir.normalized().angle()
+	kunai.global_position = parent_node.global_position
+=======
+	
+func attack():
+	if w_uses_left >0:
+		super.attack()
+		var dir = get_global_mouse_position()-global_position
+		var kunai = kunai_proj.instantiate()
+		get_tree().get_root().add_child(kunai)
+		kunai.linear_velocity = kunai.linear_velocity * dir.normalized()
+		kunai.rotation = dir.normalized().angle()
+		kunai.global_position = global_position
+		w_uses_left -=1
+		$"..".weapon_update()
+>>>>>>> destination
+
+
+func ability(parent_node: Node,dir:Vector2):
+	var kunai = kunai_abi_proj.instantiate()
+	parent_node.get_tree().get_root().add_child(kunai)
+	kunai.linear_velocity = kunai.linear_velocity * dir.normalized()
+	kunai.rotation = dir.normalized().angle()
+	kunai.global_position = parent_node.global_position

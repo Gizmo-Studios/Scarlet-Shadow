@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ibh6ua16dyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30lx6"]
+resource_local_to_scene = true
+size = Vector2(200, 200)
+
+[node name="Block_Movement" type="StaticBody2D"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="Block_Area" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_30lx6")
+debug_color = Color(0, 0.648, 0.205, 0.735)
