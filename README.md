@@ -25,6 +25,19 @@ In this Project I worked on a 2D Platformer in the style of Hollow Knight. The p
 </br></br>
 
 
+### 🦊 Movement Tester:
+<img align="right"  width="500"   alt="Movement Tester" src="https://github.com/user-attachments/assets/38c936e5-005a-4ff2-b3f1-758a2a97f92f" /> 
+For my first Godot project, Scarlet Shadow, I built a small movement tester that was inspired by
+<a href="https://dawnosaur.itch.io/platformer-movement-demo-2">DawnosaurDev</a> and was aimed at helping to find the best-fitting movement for the player character.
+
+I added all the typical settings, such as coyote time, and made them adjustable. This made it easy to find the best-fitting movement and it was also interesting to see how everyone had a different idea of “perfect” movement.
+
+It’s a small project, but it combines my love for good-feeling gameplay with the “procedural” aspect of changing and experimenting with settings until they match your ideal vision.
+
+https://gizmooe.itch.io/2d-movement-tester
+<br clear=all>
+
+
 ### 🦊 Character:
 <img align="right" width="350" 
 src="https://github.com/user-attachments/assets/68bf552b-17f9-4674-9a56-dfbcca7d851a"/>
